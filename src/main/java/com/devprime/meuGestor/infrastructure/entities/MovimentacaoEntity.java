@@ -1,7 +1,7 @@
-package com.devprime.meuGestor.infrastructure.business.entities;
+package com.devprime.meuGestor.infrastructure.entities;
 
 
-import com.devprime.meuGestor.infrastructure.business.dtos.TipoMovimentacao;
+import com.devprime.meuGestor.core.enums.TipoMovimentacao;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;

@@ -25,7 +25,7 @@ public class MeuGestorApplication {
 
         ArrayList<Produto> produtosNovos = new ArrayList<>();
 
-        produtosNovos.add(new Produto(1, "Skol", minhasCategorias.get(1), 20, 96.20, 5));
+        produtosNovos.add(new Produto(null,"Skol", minhasCategorias.get(1), 20, 96.20, 5));
 
         produtosNovos.get(0).adicionarEstoque(5);
     }

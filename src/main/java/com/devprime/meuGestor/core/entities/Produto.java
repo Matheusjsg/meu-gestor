@@ -3,15 +3,15 @@ package com.devprime.meuGestor.core.entities;
 
 public class Produto {
 
-    private long id;
+    private Long id;
     private String nome;
-    private Categoria categoriaid;
+    private Categoria categoria;
     Integer quantidade;
     private double precoVenda;
     private Integer quantidadeMin;
 
 
-    public Produto(long id, String nome, Categoria categoriaid, Integer quantidade, double precoVenda, Integer quantidadeMin) {
+    public Produto(Long id, String nome, Categoria categoria, Integer quantidade, double precoVenda, Integer quantidadeMin) {
 
         if(nome == null || nome.isBlank())
             throw new IllegalArgumentException("Nome obrigatório");
@@ -24,7 +24,7 @@ public class Produto {
 
         this.id = id;
         this.nome = nome;
-        this.categoriaid = categoriaid;
+        this.categoria = categoria;
         this.quantidade = quantidade;
         this.precoVenda = precoVenda;
         this.quantidadeMin = quantidadeMin;
@@ -46,17 +46,11 @@ public class Produto {
     }
 
 
-
-
-
-
-
-
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -68,12 +62,12 @@ public class Produto {
         this.nome = nome;
     }
 
-    public Categoria getCategoriaid() {
-        return categoriaid;
+    public Categoria getCategoria() {
+        return categoria;
     }
 
-    public void setCategoriaid(Categoria categoriaid) {
-        this.categoriaid = categoriaid;
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
     }
 
     public Integer getQuantidade() {

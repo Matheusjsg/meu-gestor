@@ -1,6 +1,7 @@
-package com.devprime.meuGestor.infrastructure.business.entities;
+package com.devprime.meuGestor.infrastructure.persistence;
 
 
+import com.devprime.meuGestor.core.entities.Categoria;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;
@@ -17,7 +18,7 @@ public class ProdutoEntity {
 
     @ManyToOne
     @JoinColumn(name = "categoria_id")
-    private CategoriaEntity categoria;
+    private Categoria categoria;
 
     @Column(name = "quantidade")
     private int quantidade;
@@ -31,7 +32,7 @@ public class ProdutoEntity {
     public ProdutoEntity() {
     }
 
-    public ProdutoEntity(String nome, long id, CategoriaEntity categoria, int quantidade, BigDecimal precoVenda, int quantidadeMinima) {
+    public ProdutoEntity(String nome, long id, Categoria categoria, int quantidade, BigDecimal precoVenda, int quantidadeMinima) {
         this.nome = nome;
         this.id = id;
         this.categoria = categoria;
@@ -56,11 +57,11 @@ public class ProdutoEntity {
         this.nome = nome;
     }
 
-    public CategoriaEntity getCategoria() {
+    public Categoria getCategoria() {
         return categoria;
     }
 
-    public void setCategoria(CategoriaEntity categoria) {
+    public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
     }
 

@@ -1,6 +1,7 @@
-package com.devprime.meuGestor.infrastructure.business.entities;
+package com.devprime.meuGestor.infrastructure.entities;
 
 
+import com.devprime.meuGestor.infrastructure.persistence.ProdutoEntity;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;

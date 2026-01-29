@@ -1,4 +1,4 @@
-package com.devprime.meuGestor.infrastructure.business.entities;
+package com.devprime.meuGestor.infrastructure.entities;
 
 
 import jakarta.persistence.*;
