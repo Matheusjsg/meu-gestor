@@ -15,6 +15,10 @@ public class CriarProdutoImpl implements CriarProdutoUsecase{
     @Override
     public Produto execute(Produto produto) {
 
+        produtoGateway.buscarPorNome(produto.getNome())
+                .ifPresent(p -> {
+                    throw new ProdutoJaCadastradoException(produto.getNome());
+                });
 
         return produtoGateway.criarProduto(produto);
     }

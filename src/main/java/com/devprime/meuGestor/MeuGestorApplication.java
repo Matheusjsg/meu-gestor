@@ -2,8 +2,6 @@ package com.devprime.meuGestor;
 
 import com.devprime.meuGestor.core.entities.Categoria;
 import com.devprime.meuGestor.core.entities.Produto;
-import com.devprime.meuGestor.core.gateway.ProdutoGateway;
-import com.devprime.meuGestor.core.usecase.produto.BuscarProdutoNomeUsecase;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -27,8 +25,9 @@ public class MeuGestorApplication {
 
         ArrayList<Produto> produtosNovos = new ArrayList<>();
 
-        produtosNovos.add(new Produto(1, "Skol", 1, 20, 96.20, 5));
+        produtosNovos.add(new Produto(1, "Skol", minhasCategorias.get(1), 20, 96.20, 5));
 
-
+        produtosNovos.get(0).adicionarEstoque(5);
     }
+
 }
