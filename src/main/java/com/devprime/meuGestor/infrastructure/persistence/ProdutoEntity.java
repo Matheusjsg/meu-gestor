@@ -23,7 +23,7 @@ public class ProdutoEntity {
     @Column(name = "quantidade")
     private int quantidade;
 
-    private BigDecimal precoVenda;
+    private double precoVenda;
 
     @Column(name = "quantidade_minima")
     private int quantidadeMinima;
@@ -32,9 +32,8 @@ public class ProdutoEntity {
     public ProdutoEntity() {
     }
 
-    public ProdutoEntity(String nome, long id, Categoria categoria, int quantidade, BigDecimal precoVenda, int quantidadeMinima) {
+    public ProdutoEntity(String nome, Categoria categoria, int quantidade, double precoVenda, int quantidadeMinima) {
         this.nome = nome;
-        this.id = id;
         this.categoria = categoria;
         this.quantidade = quantidade;
         this.precoVenda = precoVenda;
@@ -73,11 +72,11 @@ public class ProdutoEntity {
         this.quantidade = quantidade;
     }
 
-    public BigDecimal getPrecoVenda() {
+    public double getPrecoVenda() {
         return precoVenda;
     }
 
-    public void setPrecoVenda(BigDecimal precoVenda) {
+    public void setPrecoVenda(double precoVenda) {
         this.precoVenda = precoVenda;
     }
 

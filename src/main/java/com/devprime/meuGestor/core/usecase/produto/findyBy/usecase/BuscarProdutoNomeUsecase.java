@@ -1,8 +1,7 @@
-package com.devprime.meuGestor.core.usecase.produto;
+package com.devprime.meuGestor.core.usecase.produto.findyBy.usecase;
 
 import com.devprime.meuGestor.core.entities.Produto;
 
-import java.util.Optional;
 
 public interface BuscarProdutoNomeUsecase {
 

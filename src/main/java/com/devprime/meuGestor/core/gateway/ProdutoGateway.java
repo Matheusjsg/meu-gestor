@@ -7,10 +7,10 @@ import java.util.Optional;
 public interface ProdutoGateway {
 
 
-    Produto criarProduto (Produto produto);
+    Produto salvar(Produto produto);
     Produto atualizarProduto (long id);
-    Produto deletarProduto (long id);
-    Produto buscarPorId (long id);
+    void deletarProduto (long id);
+    Optional<Produto> buscarPorId (long id);
     Optional<Produto> buscarPorNome(String nome);
 
 }

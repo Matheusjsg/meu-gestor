@@ -1,8 +1,7 @@
-package com.devprime.meuGestor.core.usecase.produto;
+package com.devprime.meuGestor.core.usecase.produto.usecase;
 
 import com.devprime.meuGestor.core.entities.Produto;
 
-import java.util.Optional;
 
 public interface CriarProdutoUsecase {
 

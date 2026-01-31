@@ -15,19 +15,7 @@ public class MeuGestorApplication {
     public static void main(String[] args) {
         SpringApplication.run(MeuGestorApplication.class, args);
 
-        List<Categoria> minhasCategorias = new ArrayList<>();
 
-        minhasCategorias.add (new Categoria(1, "Destilado"));
-        minhasCategorias.add (new Categoria(2, "cerveja"));
-        minhasCategorias.add (new Categoria(3, "energetico"));
-        minhasCategorias.add (new Categoria(4, "suco"));
-
-
-        ArrayList<Produto> produtosNovos = new ArrayList<>();
-
-        produtosNovos.add(new Produto(null,"Skol", minhasCategorias.get(1), 20, 96.20, 5));
-
-        produtosNovos.get(0).adicionarEstoque(5);
     }
 
 }

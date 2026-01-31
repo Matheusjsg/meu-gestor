@@ -1,10 +1,11 @@
-package com.devprime.meuGestor.core.usecase.produto;
+package com.devprime.meuGestor.core.usecase.produto.implementation;
 
 import com.devprime.meuGestor.core.entities.Produto;
 import com.devprime.meuGestor.core.exceptions.ProdutoJaCadastradoException;
 import com.devprime.meuGestor.core.gateway.ProdutoGateway;
+import com.devprime.meuGestor.core.usecase.produto.usecase.CriarProdutoUsecase;
 
-public class CriarProdutoImpl implements CriarProdutoUsecase{
+public class CriarProdutoImpl implements CriarProdutoUsecase {
 
     private final ProdutoGateway produtoGateway;
 
@@ -20,6 +21,6 @@ public class CriarProdutoImpl implements CriarProdutoUsecase{
                     throw new ProdutoJaCadastradoException(produto.getNome());
                 });
 
-        return produtoGateway.criarProduto(produto);
+        return produtoGateway.salvar(produto);
     }
 }

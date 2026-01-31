@@ -2,25 +2,25 @@ package com.devprime.meuGestor.infrastructure.mapper;
 
 
 import com.devprime.meuGestor.core.entities.Produto;
-import com.devprime.meuGestor.infrastructure.dtos.request.ProdutoCreateRequest;
 import com.devprime.meuGestor.infrastructure.persistence.ProdutoEntity;
 import org.springframework.stereotype.Component;
 
-
 @Component
-public class ProdutoCreateMapper {
+public class EntityMapper {
 
-    public ProdutoCreateRequest toDto(Produto produto) {
+    public Produto toDomain(ProdutoEntity produtoResponse) {
+        return new Produto(
+                produtoResponse.getId(),
+                produtoResponse.getNome(),
+                produtoResponse.getCategoria(),
+                produtoResponse.getQuantidade(),
+                produtoResponse.getPrecoVenda(),
+                produtoResponse.getQuantidadeMinima()
 
-        return new ProdutoCreateRequest(
-                produto.getNome(),
-                produto.getCategoria(),
-                produto.getQuantidade(),
-                produto.getPrecoVenda(),
-                produto.getQuantidadeMin()
         );
     }
-        public ProdutoEntity toEntity(Produto produtoDto){
+
+    public ProdutoEntity toEntity(Produto produtoDto) {
 
         return new ProdutoEntity(
                 produtoDto.getNome(),
