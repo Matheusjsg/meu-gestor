@@ -5,5 +5,5 @@ import com.devprime.meuGestor.core.entities.Produto;
 
 public interface BuscarProdutoNomeUsecase {
 
-    Produto execute(String nomeProduto);
+    Produto execute (String nome);
 }

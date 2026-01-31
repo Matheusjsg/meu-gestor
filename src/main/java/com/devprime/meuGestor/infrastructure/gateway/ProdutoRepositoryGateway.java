@@ -25,7 +25,6 @@ public class ProdutoRepositoryGateway implements ProdutoGateway {
 
     @Override
     public Produto salvar(Produto produto) {
-
         ProdutoEntity criado = produtoRepository.save(entityMapper.toEntity(produto));
 
         return entityMapper.toDomain(criado);
@@ -59,7 +58,7 @@ public class ProdutoRepositoryGateway implements ProdutoGateway {
 
     @Override
     public Optional<Produto> buscarPorNome(String nome) {
-        var pesquisado = produtoRepository.buscarPorNome(nome)
+        var pesquisado = produtoRepository.findByName(nome)
                 .orElseThrow(() -> new IllegalArgumentException("Nome não encontrado"));
 
                         return Optional.of((Produto) pesquisado);
