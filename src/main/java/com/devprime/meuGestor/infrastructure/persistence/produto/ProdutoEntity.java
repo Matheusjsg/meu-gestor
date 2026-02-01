@@ -1,10 +1,9 @@
-package com.devprime.meuGestor.infrastructure.persistence;
+package com.devprime.meuGestor.infrastructure.persistence.produto;
 
 
 import com.devprime.meuGestor.core.entities.Categoria;
+import com.devprime.meuGestor.infrastructure.persistence.categoria.CategoriaEntity;
 import jakarta.persistence.*;
-
-import java.math.BigDecimal;
 
 @Entity
 @Table(name= "tb_produtos")
@@ -12,13 +11,13 @@ public class ProdutoEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    private Long id;
 
     private String nome;
 
     @ManyToOne
     @JoinColumn(name = "categoria_id")
-    private Categoria categoria;
+    private CategoriaEntity categoria;
 
     @Column(name = "quantidade")
     private int quantidade;
@@ -28,11 +27,11 @@ public class ProdutoEntity {
     @Column(name = "quantidade_minima")
     private int quantidadeMinima;
 
-
     public ProdutoEntity() {
     }
 
-    public ProdutoEntity(String nome, Categoria categoria, int quantidade, double precoVenda, int quantidadeMinima) {
+    public ProdutoEntity(String nome, CategoriaEntity categoria, int quantidade, double precoVenda, int quantidadeMinima) {
+
         this.nome = nome;
         this.categoria = categoria;
         this.quantidade = quantidade;
@@ -40,11 +39,12 @@ public class ProdutoEntity {
         this.quantidadeMinima = quantidadeMinima;
     }
 
-    public long getId() {
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -56,11 +56,11 @@ public class ProdutoEntity {
         this.nome = nome;
     }
 
-    public Categoria getCategoria() {
+    public CategoriaEntity getCategoria() {
         return categoria;
     }
 
-    public void setCategoria(Categoria categoria) {
+    public void setCategoria(CategoriaEntity categoria) {
         this.categoria = categoria;
     }
 
@@ -88,3 +88,4 @@ public class ProdutoEntity {
         this.quantidadeMinima = quantidadeMinima;
     }
 }
+

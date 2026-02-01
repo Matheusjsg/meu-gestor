@@ -1,12 +1,12 @@
-package com.devprime.meuGestor.infrastructure.mapper;
+package com.devprime.meuGestor.infrastructure.mapper.produto;
 
 
 import com.devprime.meuGestor.core.entities.Produto;
-import com.devprime.meuGestor.infrastructure.persistence.ProdutoEntity;
+import com.devprime.meuGestor.infrastructure.persistence.produto.ProdutoEntity;
 import org.springframework.stereotype.Component;
 
 @Component
-public class EntityMapper {
+public class ProdutoEntityMapper {
 
     public Produto toDomain(ProdutoEntity produtoResponse) {
         return new Produto(

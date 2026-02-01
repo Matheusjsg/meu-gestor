@@ -2,7 +2,6 @@ package com.devprime.meuGestor.core.usecase.categoria.findyBy.implementation;
 
 import com.devprime.meuGestor.core.entities.Categoria;
 import com.devprime.meuGestor.core.gateway.CategoriaGateway;
-import com.devprime.meuGestor.core.gateway.ProdutoGateway;
 import com.devprime.meuGestor.core.usecase.categoria.findyBy.usecase.BuscarCategIdusecase;
 
 public class BuscarCategImpl implements BuscarCategIdusecase {

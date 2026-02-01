@@ -3,9 +3,9 @@ package com.devprime.meuGestor.infrastructure.gateway;
 import com.devprime.meuGestor.core.entities.Produto;
 import com.devprime.meuGestor.core.gateway.ProdutoGateway;
 
-import com.devprime.meuGestor.infrastructure.mapper.EntityMapper;
-import com.devprime.meuGestor.infrastructure.persistence.ProdutoEntity;
-import com.devprime.meuGestor.infrastructure.persistence.ProdutoRepository;
+import com.devprime.meuGestor.infrastructure.mapper.produto.ProdutoEntityMapper;
+import com.devprime.meuGestor.infrastructure.persistence.produto.ProdutoEntity;
+import com.devprime.meuGestor.infrastructure.persistence.produto.ProdutoRepository;
 import org.springframework.stereotype.Component;
 import java.util.Optional;
 
@@ -14,20 +14,20 @@ import java.util.Optional;
 public class ProdutoRepositoryGateway implements ProdutoGateway {
 
 
-    EntityMapper entityMapper;
+    ProdutoEntityMapper produtoEntityMapper;
     ProdutoRepository produtoRepository;
     
-    public ProdutoRepositoryGateway(EntityMapper entityMapper, ProdutoRepository produtoRepository) {
-        this.entityMapper = entityMapper;
+    public ProdutoRepositoryGateway(ProdutoEntityMapper produtoEntityMapper, ProdutoRepository produtoRepository) {
+        this.produtoEntityMapper = produtoEntityMapper;
         this.produtoRepository = produtoRepository;
         
     }
 
     @Override
     public Produto salvar(Produto produto) {
-        ProdutoEntity criado = produtoRepository.save(entityMapper.toEntity(produto));
+        ProdutoEntity criado = produtoRepository.save(produtoEntityMapper.toEntity(produto));
 
-        return entityMapper.toDomain(criado);
+        return produtoEntityMapper.toDomain(criado);
     }
 
 
@@ -50,7 +50,7 @@ public class ProdutoRepositoryGateway implements ProdutoGateway {
     public Optional<Produto> buscarPorId(long id) {
 
         var busca = produtoRepository.findById(id)
-                .map(entityMapper::toDomain)
+                .map(produtoEntityMapper::toDomain)
                 .orElseThrow(() -> new RuntimeException("`roduto não encontrado"));
 
             return Optional.of(busca);

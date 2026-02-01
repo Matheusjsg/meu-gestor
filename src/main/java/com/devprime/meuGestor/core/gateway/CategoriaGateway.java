@@ -1,7 +1,6 @@
 package com.devprime.meuGestor.core.gateway;
 
 import com.devprime.meuGestor.core.entities.Categoria;
-import com.devprime.meuGestor.core.entities.Produto;
 
 import java.util.Optional;
 

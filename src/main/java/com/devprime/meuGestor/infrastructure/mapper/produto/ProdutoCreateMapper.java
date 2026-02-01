@@ -1,9 +1,9 @@
-package com.devprime.meuGestor.infrastructure.mapper;
+package com.devprime.meuGestor.infrastructure.mapper.produto;
 
 
 import com.devprime.meuGestor.core.entities.Produto;
-import com.devprime.meuGestor.infrastructure.dtos.request.ProdutoCreateRequest;
-import com.devprime.meuGestor.infrastructure.persistence.ProdutoEntity;
+import com.devprime.meuGestor.infrastructure.dtos.produtos.request.ProdutoCreateRequest;
+import com.devprime.meuGestor.infrastructure.persistence.produto.ProdutoEntity;
 import org.springframework.stereotype.Component;
 
 
