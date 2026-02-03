@@ -2,20 +2,27 @@ package com.devprime.meuGestor.infrastructure.mapper.produto;
 
 
 import com.devprime.meuGestor.core.entities.Produto;
+import com.devprime.meuGestor.infrastructure.mapper.categoria.CategoriaMapper;
 import com.devprime.meuGestor.infrastructure.persistence.produto.ProdutoEntity;
 import org.springframework.stereotype.Component;
 
 @Component
 public class ProdutoEntityMapper {
 
-    public Produto toDomain(ProdutoEntity produtoResponse) {
+    private final CategoriaMapper categoriaMapper;
+
+    public ProdutoEntityMapper(CategoriaMapper categoriaMapper) {
+        this.categoriaMapper = categoriaMapper;
+    }
+
+    public Produto toDomain(ProdutoEntity produto) {
         return new Produto(
-                produtoResponse.getId(),
-                produtoResponse.getNome(),
-                produtoResponse.getCategoria(),
-                produtoResponse.getQuantidade(),
-                produtoResponse.getPrecoVenda(),
-                produtoResponse.getQuantidadeMinima()
+                produto.getId(),
+                produto.getNome(),
+                categoriaMapper.toDomain(produto.getCategoria()),
+                produto.getQuantidade(),
+                produto.getPrecoVenda(),
+                produto.getQuantidadeMinima()
 
         );
     }
@@ -24,7 +31,7 @@ public class ProdutoEntityMapper {
 
         return new ProdutoEntity(
                 produtoDto.getNome(),
-                produtoDto.getCategoria(),
+                categoriaMapper.toEntity(produtoDto.getCategoria()),
                 produtoDto.getQuantidade(),
                 produtoDto.getPrecoVenda(),
                 produtoDto.getQuantidadeMin()

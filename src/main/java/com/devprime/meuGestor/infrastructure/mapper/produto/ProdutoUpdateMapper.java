@@ -3,7 +3,7 @@ package com.devprime.meuGestor.infrastructure.mapper.produto;
 
 import com.devprime.meuGestor.core.entities.Produto;
 
-import com.devprime.meuGestor.infrastructure.dtos.request.ProdutoUpdateRequest;
+import com.devprime.meuGestor.infrastructure.dtos.produtos.request.ProdutoUpdateRequest;
 import org.springframework.stereotype.Component;
 
 @Component

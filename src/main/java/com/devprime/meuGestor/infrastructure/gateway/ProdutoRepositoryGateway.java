@@ -51,16 +51,16 @@ public class ProdutoRepositoryGateway implements ProdutoGateway {
 
         var busca = produtoRepository.findById(id)
                 .map(produtoEntityMapper::toDomain)
-                .orElseThrow(() -> new RuntimeException("`roduto não encontrado"));
+                .orElseThrow(() -> new RuntimeException("Produto não encontrado"));
 
             return Optional.of(busca);
     }
 
     @Override
     public Optional<Produto> buscarPorNome(String nome) {
-        var pesquisado = produtoRepository.findByName(nome)
+        var pesquisado = produtoRepository.findByNome(nome)
                 .orElseThrow(() -> new IllegalArgumentException("Nome não encontrado"));
 
-                        return Optional.of((Produto) pesquisado);
+                        return Optional.of(pesquisado);
     }
 }

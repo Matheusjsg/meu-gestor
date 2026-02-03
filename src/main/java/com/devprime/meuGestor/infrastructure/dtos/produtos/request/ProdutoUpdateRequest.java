@@ -1,7 +1,6 @@
-package com.devprime.meuGestor.infrastructure.dtos.request;
+package com.devprime.meuGestor.infrastructure.dtos.produtos.request;
 
 import com.devprime.meuGestor.core.entities.Categoria;
-import jakarta.validation.constraints.NotBlank;
 
 public record ProdutoUpdateRequest(
 
